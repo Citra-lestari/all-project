@@ -8,14 +8,250 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <!-- link iconify -->
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <!-- link poppins -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <!-- link open sans -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <!-- link swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="./css/tailwind.css" />
     </head>
-    <body>
-        <div
-            class="min-h-screen flex lg:bg-red-400 flex-col items-center bg-gray-700 justify-center"
-        >
-            <h1 class="text-5xl text-white font-sans mb-2">Hello World!</h1>
-            <p class="text-white">Tailwind quick start</p>
-        </div>
+    <body class="bg-white font-pop text-black overflow-x-hidden w-screen">
+        <header class="sticky top-0 z-20">
+            <div class="margin-left relative flex justify-between items-center h-20">
+                <div class="w-[427px] bg-secondary h-full absolute right-0 z-10"></div>
+
+                <nav class="w-full relative md:z-0 z-10 xs:py-4 flex justify-between items-center padding bg-white" id="navbar">
+                <div>
+                    <a href="index.html"><img src="image/logo stepUp (1).svg" alt="logo" class="lg:w-32 w-28"></a>
+                </div>
+
+                <div class="hidden md:flex items-center">
+                    <ul class="flex justify-around lg:gap-12 md:gap-6 items-center">
+                        <li><a href="index.html" class="nav-all">Home</a></li>
+                        <li><a href="#" class="nav-all">About Us</a></li>
+                        <li><a href="#" class="nav-all">Services</a></li>
+                        <li><a href="#" class="nav-all">Contact Us</a></li>
+                        <li><a href="#" class="nav-all">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="hidden md:block">
+                    <a href="" class="button-nav">Login</a>
+                    <a href="" class="button-nav">Register</a>
+                </div>
+
+                <button class="md:hidden" id="menu-toggle">
+                    <iconify-icon icon="mynaui:menu" class="text-[32px] text-black hover:text-black hover:transition-all hover:duration-500"></iconify-icon>
+                </button>
+                </nav>
+                
+                <nav class="hidden md:hidden w-full py-8 fixed bg-white padding z-10 top-28" id="mobile-menu">
+                    <div class="flex flex-col gap-4 items-center">
+                        <ul class="text-center flex flex-col gap-4">
+                            <li><a href="index.html" class="nav-all">Home</a></li>
+                            <li><a href="#" class="nav-all">About Us</a></li>
+                            <li><a href="#" class="nav-all">Services</a></li>
+                            <li><a href="#" class="nav-all">Contact Us</a></li>
+                            <li><a href="#" class="nav-all">Blog</a></li>
+                        </ul>
+                        <a href="" class="button-nav">Login</a>
+                        <a href="" class="button-nav">Register</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="margin-bottom block md:grid grid-cols-2 gap-[20px] items-center">
+            <div class="margin-left ">
+                <h1 class="font-medium text-[20px] md:text-[30px] lg:text-[37px]" >Find Your Inner Peace, We Are Ready to Accompany You</h1>
+                <p class="font-open text-black/60 text-sm md:text-[16px] md:w-[508px]">We are here as a trusted psychology agency, providing a safe space and professional support for every step of your journey towards emotional and mental well-being.</p>
+                <div class="flex gap-[10px] mt-[30px]">
+                    <a href="" class="button">Book Now</a>
+                    <a href="" class="button">Learn More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+                </div>
+                <div class="flex items-center mt-[16px]">
+                    <img src="image/rating-hero.svg"  class=" pr-[16px]" alt="">
+                    <p class="text-info-badges-rating">50k Review</p>
+                    <p class="text-info-badges-rating">600k+ Healed People</p>
+                </div>
+            </div>
+            <!-- <div class="absolute z-0 bg-secondary h-[641px] w-[427px] r-[0]">
+                <img src="image/hero.svg" class="relative" alt="">
+            </div> -->
+        </section>
+
+
+        <!-- ABOUT US -->
+        <section class="margin margin-bottom block md:grid grid-cols-2 gap-[20px] items-center">
+            <img src="image/about us.svg" class="w-full h-auto hidden md:block" alt="">
+            <div class="lg:w-[557px]">
+                <h1 class="text-[20px] md:text-[25px] lg:text-[32px] pb-[8px]">We are a Trusted Partner for Your Mental Health</h1>
+                <p class="font-open text-sm lg:text-[16px] text-black/60 pb-[25px]">We are a psychology agency dedicated to supporting each individual's journey towards better mental health and providing a space for you to express yourself.</p>
+
+                <div class="flex gap-[10px]">
+                    <a href="" class="button">Book Now</a>
+                    <a href="" class="button">Learn More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEVICE -->
+        <section class="margin margin-bottom">
+            <div class="title-desc-section">
+                <h1 class="title-section md:pr-[50px] lg:pr-[200px] ">We Provide Several Services to Suit Your Needs</h1>
+                <p class="desc-section md:line-clamp-2 lg:line-clamp-3" >We provide a variety of psychology services tailored to your needs and designed to support your journey towards optimal mental well-being and healing.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[16px]">
+                <!-- service 1 -->
+                <div>
+                    <img src="image/stres 1.svg" class="mb-[16px]" alt="Generalized Anxiety Disorder ">
+                    <h1 class="service-title">Generalized Anxiety Disorder</h1>
+                    <p class="service-desc">It is a condition in which a person experiences excessive and persistent worry and tension about various things in everyday life.</p>
+                    <a href="" class="button">Learn More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+                </div>
+
+                <!-- service 2 -->
+                <div>
+                    <img src="image/strees 2.svg" class="mb-[16px]" alt="Major Depressive Disorder">
+                    <h1 class="service-title">Major Depressive Disorder</h1>
+                    <p class="service-desc">It is a serious mood disorder that causes persistent feelings of sadness, loss of interest or pleasure in daily activities that are usually enjoyed.</p>
+                    <a href="" class="button">Learn More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+                </div>
+
+                <!-- service 3 -->
+                <div>
+                    <img src="image/stres 3.svg" class="mb-[16px]" alt="Bipolar Disorder">
+                    <h1 class="service-title">Bipolar Disorder</h1>
+                    <p class="service-desc">It is a mental health condition that causes extreme mood swings, a person may feel very excited, have lots of ideas, and have little sleep.</p>
+                    <a href="" class="button">Learn More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+                </div>
+
+                <!-- service 4 -->
+                <div>
+                    <img src="image/stres 4.svg" class="mb-[16px]" alt="Obsessive-Compulsive Disorder">
+                    <h1 class="service-title">Obsessive-Compulsive Disorder</h1>
+                    <p class="service-desc">It is an anxiety disorder characterized by the presence of compulsions; they often feel compelled to carry out the compulsions.</p>
+                    <a href="" class="button">Learn More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RATING -->
+        <section class="margin margin-bottom">
+            <!-- <div>
+                <h1 class="title-section mb-[10px]">Our Client's Story of Recovering from Major Depressive Disorder</h1>
+                <p class="desc-section mb-[30px]">Trapped in the darkness of Major Depression, Maya rediscovered hope. Through the support of a psychologist, she learned to manage her negative thoughts and found the strength to rise above them. Today, Maya lives a more balanced life, proving that recovery is possible. Her story is a true inspiration of transformation and courage.</p>
+                <a href="" class="button">Read More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+            </div>
+            <img src="image/rating.svg" class="w-full" alt=""> -->
+
+            <div class="swiper card-review-customer">
+                <div class="swiper-wrapper mb-9">
+                    <div class="swiper-slide">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <div class="flex flex-col gap-[20px] md:w-[48%]">
+                                <h1 class="font-pop text-[32px] md:text-[28px] lg:leading-[45px]">Our Client's Story of Recovering from Major Depressive Disorder</h1>
+                                <p class="font-open text-sm md:text-[16px] text-black/60">Trapped in the darkness of Major Depression, Maya rediscovered hope. Through the support of a psychologist, she learned to manage her negative thoughts and found the strength to rise above them. Today, Maya lives a more balanced life, proving that recovery is possible. Her story is a true inspiration of transformation and courage.</p>
+                                <a href="" class="button">Read More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+                            </div>
+                            <img src="image/rating.svg" class="md:w-[45%]" alt="">
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <div class="flex flex-col gap-[20px] md:w-[48%]0">
+                                <h1 class="font-pop text-[32px] md:text-[28px] lg:leading-[45px]">Our Client's Story of Recovering from Major Depressive Disorder</h1>
+                                <p class="font-open text-sm md:text-[16px] text-black/60">Trapped in the darkness of Major Depression, Maya rediscovered hope. Through the support of a psychologist, she learned to manage her negative thoughts and found the strength to rise above them. Today, Maya lives a more balanced life, proving that recovery is possible. Her story is a true inspiration of transformation and courage.</p>
+                                <a href="" class="button">Read More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+                            </div>
+                            <img src="image/rating.svg" class="md:w-[45%]" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-parent">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <!-- ABOUT US -->
+        <section class="margin margin-bottom block md:grid grid-cols-2 gap-[20px] items-center">
+            <img src="image/about us.svg" class="w-full" alt="">
+            <div>
+                <h1 class="title-section">Why Choose Us for Your Mental Healing and Well-Being</h1>
+                <p class="desc-section">We are committed to creating a safe and supportive environment, supported by a team of experienced psychologists and psychiatrists who prioritize a personal and evidence-based approach.</p>
+                <div class="pt-[20px]">
+                    <div class="flex ">
+                        <div class="bg-secondary rounded-[17px] px-[6px] py-[1px] mr-[13px] item-center">
+                            <iconify-icon icon="heroicons-solid:check" class="text-[14px] text-white"></iconify-icon>
+                        </div>
+                        <p class="text-[14px]">Experienced Team of Psychologists</p>
+                    </div>
+
+                    <div class="flex mt-[14px]">
+                        <div class="bg-secondary rounded-[17px] px-[6px] py-[1px] mr-[13px] item-center">
+                            <iconify-icon icon="heroicons-solid:check" class="text-[14px] text-white"></iconify-icon>
+                        </div>
+                        <p class="text-[14px]">Personal and Holistic Approach</p>
+                    </div>
+
+                    <div class="flex mt-[14px]">
+                        <div class="bg-secondary rounded-[17px] px-[6px] py-[1px] mr-[13px] item-center">
+                            <iconify-icon icon="heroicons-solid:check" class="text-[14px] text-white"></iconify-icon>
+                        </div>
+                        <p class="text-[14px]">Safe and Secret Space Safely Guarded</p>
+                    </div>
+
+                    <div class="flex mt-[14px]">
+                        <div class="bg-secondary rounded-[17px] px-[6px] py-[1px] mr-[13px] item-center">
+                            <iconify-icon icon="heroicons-solid:check" class="text-[14px] text-white"></iconify-icon>
+                        </div>
+                        <p class="text-[14px]">Our Commitment to Your Well-Being and Healing</p>
+                    </div>
+                </div>
+                <div class="flex gap-[10px] mt-[30px]">
+                    <a href="" class="button">Book Now</a>
+                    <a href="" class="button">Learn More <iconify-icon icon="solar:arrow-right-linear" class="text-[20px]"></iconify-icon></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DOCTOR -->
+        <section class="margin margin-bottom">
+            <div class="title-desc-section">
+                <h1 class="title-section md:pr-[50px] lg:pr-[200px] ">Our Professional and Dedicated Team is Ready to Assist You</h1>
+                <p class="desc-section md:line-clamp-2 lg:line-clamp-3" >Meet psychologists and psychiatrists who are committed to your well-being with diverse educational backgrounds and specializations, we are ready to help you.</p>
+            </div>
+            <div class="grid grid-cols-4 gap-[16px]">
+                <div>
+                    <img src="image/dr 1.svg" alt="">
+                    <div class="bg-white rounded-[10px] p-[16px] mt-[-40px] z-50 shadow-lg">
+                        <h1 class="font-medium text-[16px]">Dr. Ethan Reed Christian</h1>
+                        <p class="font-open text-black/80 text-[14px]">Psychiatrist</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- script swiper -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- script js light box -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox-plus-jquery.js" integrity="sha512-C6X3/hskB+isJVpYkZ68yausQGoZnr7w41ps9fftfXSPhe51ygvgh8NW2b9XCxCpIMUku2BTUOd2JtswTkl29g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script type="module" src="swiper.js"></script>
+        <script src="index.js"></script>
+
+        
     </body>
 </html>

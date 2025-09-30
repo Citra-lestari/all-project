@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* untuk padding kanan kiri dan bawah */
+.margin {
+   @apply mx-[20px] md:mx-[40px] lg:mx-[120px] 2xl:mx-[120px]
+   /* mx-[mobile] md:mx-[tablet] lg:mx-[dekstop] 2xl:mx-[pc] */
+   /* mx itu margin dengan sumbu x (kkanan kiri) */
+}
+
+.margin-left {
+   @apply ml-[20px] md:ml-[40px] lg:ml-[120px] 2xl:ml-[120px]
+   /* mx-[mobile] md:mx-[tablet] lg:mx-[dekstop] 2xl:mx-[pc] */
+   /* mx itu margin dengan sumbu x (kkanan kiri) */
+}
+
+.margin-bottom {
+    @apply mb-[40px] md:mb-[80px] lg:mb-[130px] 2xl:mb-[130px]
+}
+
+/* navbar */
+.nav-all{
+    @apply text-black/70 lg:text-base md:text-sm text-base hover:transition-all hover:text-primary hover:duration-500;
+}
+.button-nav{
+  @apply bg-white px-[21px] md:px-[27px] py-[8px] rounded-[5px] text-primary lg:text-[16px] md:text-[18px] text-[14px] border border-primary hover:text-white hover:bg-primary;
+}
+
+/* button all */
+.button{
+    @apply bg-white px-[21px] md:px-[27px] py-[8px] rounded-[5px] text-primary lg:text-[16px] md:text-[18px] text-[14px] border border-primary hover:text-white hover:bg-primary items-center flex gap-2 w-fit;
+}
+
+/* css untuk judul dan desc persection */
+.title-desc-section{
+  @apply flex justify-between items-end mb-[35px];
+}
+.title-section{
+  @apply font-pop text-[32px] md:text-[28px] lg:leading-[45px];
+}
+.desc-section{
+  @apply font-open text-sm md:text-[16px] w-[550px] text-black/60;
+}
+
+/* css untuk hero section */
+.text-info-badges-rating{
+  @apply font-open text-black/80 text-[14px] pr-[8px];
+}
+
+/* css untuk service */
+.service-title{
+  @apply text-black md:text-[16px] lg:text-[16px] mb-[8px];
+}
+.service-desc{
+  @apply font-open text-black/60 md:text-[15px] lg:text-[12px] mb-[16px] line-clamp-3;
+}
+
+
