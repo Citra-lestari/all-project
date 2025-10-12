@@ -496,6 +496,18 @@ section{
     margin: 0;
     padding-top: 4px;
 }
+.swiper-wrapper {
+    margin-bottom: 50px;
+}
+.swiper-pagination-bullet {
+    background-color: var(--bgcolor);
+    border: 1px solid var(--hijau);
+    opacity: 100;
+}
+.swiper-pagination-bullet-active {
+    background-color: var(--hijau);
+    border: 1px solid var(--hijau);
+}
 
 /* cta */
 .cta-content{
