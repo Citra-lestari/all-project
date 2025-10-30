@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Tailwind quick start</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- link swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+
+        <link rel="stylesheet" href="./css/tailwind.css" />
+    </head>
+    <body>
+        <header class="sticky top-0 z-20 h-20 bg-whiteText">
+            <div class=" relative flex justify-between items-center h-full mx-auto max-w-[90%] md:max-w-[85%] 2xl:max-w-[1440px]">
+                <nav class="w-full relative md:z-0 z-10 h-full flex justify-between items-center bg-whiteText" id="navbar">
+                    <div>
+                        <a href="index.html"><img src="image/logo.svg" alt="logo" class="lg:w-[90px] w-[50px]"></a>
+                    </div>
+
+                    <div class="hidden md:flex items-center">
+                        <ul class="flex justify-between lg:gap-[25px] md:gap-6 items-center">
+                            <li><a href="index.html" class="nav-all">Beranda</a></li>
+                            <li><a href="pageMenu.html" class="nav-all">Menu</a></li>
+                            <li><a href="rating" class="nav-all">Rating</a></li>
+                            <li><a href="pageMeeting.html" class="nav-all">Meeting Room</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="md:hidden" id="menu-toggle">
+                        <iconify-icon icon="mynaui:menu" class="text-[32px] text-blackAll hover:text-blackAll hover:transition-all hover:duration-500"></iconify-icon>
+                    </button>
+
+                    <div class="h-full bg-secondary w-[390px] absolute top-0 right-0 -z-10 hidden md:block lg:block 2xl:block"></div>
+                </nav>
+                
+                <nav class="hidden md:hidden w-full py-8 fixed bg-whiteText  z-30 top-20 left-0" id="mobile-menu">
+                    <div class="flex flex-col gap-4 items-center">
+                        <ul class="text-center flex flex-col gap-4">
+                            <li><a href="index.html" class="nav-all">Beranda</a></li>
+                            <li><a href="#" class="nav-all">Menu</a></li>
+                            <li><a href="#rating" class="nav-all">Rating</a></li>
+                            <li><a href="pageMeeting.html" class="nav-all">Meeting Room</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- hero section -->
+        <section class="title mx-auto max-w-[90%] md:max-w-[85%] 2xl:max-w-[1440px]">
+            <h1 class="pageMenu-title">Temani Harimu dengan Cita Rasa Terbaik</h1>
+            <p class="pageMenu-desc">Nikmati beragam pilihan menu kopi dan hidangan lezat yang siap menemani setiap momen harimu. Dari pagi yang sibuk hingga sore yang santai, selalu ada rasa terbaik untuk kamu nikmati di sini.</p>
+
+            <div class="home-photo ">
+                <img src="image/food 1.svg" alt="" class="photo hidden md:block">
+                <img src="image/food 2.svg" alt="" class="photo hidden md:block">
+                <img src="image/food 3.svg" alt="" class="photo hidden md:block">
+                <img src="image/food 4.svg" alt="" class="photo hidden md:hidden lg:block">
+            </div>
+        </section>
+
+        <!-- section menu -->
+        <section
+        x-data="{ kategori: 'Camilan' }"
+        class="flex flex-col md:flex-row gap-8 mx-auto max-w-[90%] md:max-w-[85%] 2xl:max-w-[1440px]"
+        >
+        <!-- Filter Kategori (Mobile) -->
+        <div class="flex md:hidden justify-center gap-3 mb-4">
+            <button
+            @click="kategori='Camilan'"
+            :class="kategori==='Camilan' ? 'bg-blackAll text-whiteText' : 'bg-gray-100 text-blackAll'"
+            class="px-4 py-2 rounded transition"
+            >
+            Camilan
+            </button>
+            <button
+            @click="kategori='Makanan'"
+            :class="kategori==='Makanan' ? 'bg-blackAll text-whiteText' : 'bg-gray-100 text-blackAll'"
+            class="px-4 py-2 rounded transition"
+            >
+            Makanan
+            </button>
+            <button
+            @click="kategori='Minuman'"
+            :class="kategori==='Minuman' ? 'bg-blackAll text-whiteText' : 'bg-gray-100 text-blackAll'"
+            class="px-4 py-2 rounded transition"
+            >
+            Minuman
+            </button>
+        </div>
+
+        <!-- Sidebar Kategori (Desktop/Tablet) -->
+        <aside class="hidden md:block w-[17%]">
+            <h2 class="text-xl font-semibold mb-4">Kategori</h2>
+            <ul class="space-y-2">
+            <li>
+                <button
+                @click="kategori='Camilan'"
+                :class="kategori==='Camilan' ? 'bg-blackAll text-whiteText' : 'hover:bg-gray-200'"
+                class="w-full text-left px-3 py-2 rounded"
+                >
+                Camilan
+                </button>
+            </li>
+            <li>
+                <button
+                @click="kategori='Makanan'"
+                :class="kategori==='Makanan' ? 'bg-blackAll text-whiteText' : 'hover:bg-gray-200'"
+                class="w-full text-left px-3 py-2 rounded"
+                >
+                Makanan
+                </button>
+            </li>
+            <li>
+                <button
+                @click="kategori='Minuman'"
+                :class="kategori==='Minuman' ? 'bg-blackAll text-whiteText' : 'hover:bg-gray-200'"
+                class="w-full text-left px-3 py-2 rounded"
+                >
+                Minuman
+                </button>
+            </li>
+            </ul>
+        </aside>
+
+        <!-- Grid Menu -->
+        <div class="flex-1">
+            <!-- Camilan -->
+            <template x-if="kategori === 'Camilan'">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <template x-for="menu in [
+                {img:'image/sandwich.svg', name:'Sandwich', price:'Rp 13.000'},
+                {img:'image/kentang goreng.svg', name:'Kentang Goreng', price:'Rp 13.000'},
+                {img:'image/choco boom.svg', name:'Choco Boom', price:'Rp 15.000'},
+                {img:'image/cinnamon roll.svg', name:'Cinnamon Roll', price:'Rp 17.000'},
+                {img:'image/croisant.svg', name:'Croissant', price:'Rp 12.000'},
+                {img:'image/cookies.svg', name:'Cookies', price:'Rp 10.000'},
+                {img:'image/fudgy brownis.svg', name:'Fudgy Brownies', price:'Rp 14.000'},
+                {img:'image/cheese cake.svg', name:'Cheese Cake', price:'Rp 20.000'},
+                {img:'image/pisang keju.svg', name:'Pisang Keju', price:'Rp 11.000'},
+                ]" :key="menu.name">
+                <div>
+                    <img :src="menu.img" class="img-menu" />
+                    <h1 class="menu-name" x-text="menu.name"></h1>
+                    <p class="menu-desc">
+                    Camilan lezat untuk menemani waktu santai Anda di kafe.
+                    </p>
+                    <div class="flex justify-between">
+                    <h2 class="price" x-text="menu.price"></h2>
+                    <p class="sold">2RB Terjual</p>
+                    </div>
+                </div>
+                </template>
+            </div>
+            </template>
+
+            <!-- Makanan -->
+            <template x-if="kategori === 'Makanan'">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <template x-for="menu in [
+                {img:'image/pizza.svg', name:'Pizza', price:'Rp 35.000'},
+                {img:'image/chiken katsu.svg', name:'Chicken Katsu', price:'Rp 30.000'},
+                {img:'image/spagethi.svg', name:'Spaghetti', price:'Rp 28.000'},
+                {img:'image/nasgor.svg', name:'Nasi Goreng', price:'Rp 20.000'},
+                {img:'image/kimbab.svg', name:'Kimbab', price:'Rp 22.000'},
+                {img:'image/burger.svg', name:'Burger', price:'Rp 25.000'},
+                {img:'image/chiken pop.svg', name:'Chicken Pop', price:'Rp 18.000'},
+                {img:'image/salad.svg', name:'Salad', price:'Rp 16.000'},
+                {img:'image/onigiri.svg', name:'Onigiri', price:'Rp 15.000'},
+                ]" :key="menu.name">
+                <div>
+                    <img :src="menu.img" class="img-menu" />
+                    <h1 class="menu-name" x-text="menu.name"></h1>
+                    <p class="menu-desc">
+                    Makanan spesial yang disajikan hangat dengan cita rasa istimewa.
+                    </p>
+                    <div class="flex justify-between">
+                    <h2 class="price" x-text="menu.price"></h2>
+                    <p class="sold">2RB Terjual</p>
+                    </div>
+                </div>
+                </template>
+            </div>
+            </template>
+
+            <!-- Minuman -->
+            <template x-if="kategori === 'Minuman'">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <template x-for="menu in [
+                {img:'image/coffe latte.svg', name:'Coffee Latte', price:'Rp 18.000'},
+                {img:'image/matcha latte.svg', name:'Matcha Latte', price:'Rp 19.000'},
+                {img:'image/cappucino.svg', name:'Cappuccino', price:'Rp 17.000'},
+                {img:'image/caramell machiato.svg', name:'Caramel Macchiato', price:'Rp 20.000'},
+                {img:'image/cold brew.svg', name:'Cold Brew', price:'Rp 22.000'},
+                {img:'image/choco milk.svg', name:'Choco Milk', price:'Rp 16.000'},
+                {img:'image/lemon tea.svg', name:'Lemon Tea', price:'Rp 13.000'},
+                {img:'image/taro latte.svg', name:'Taro Latte', price:'Rp 18.000'},
+                {img:'image/air.svg', name:'Air Mineral', price:'Rp 7.000'},
+                ]" :key="menu.name">
+                <div>
+                    <img :src="menu.img" class="img-menu" />
+                    <h1 class="menu-name" x-text="menu.name"></h1>
+                    <p class="menu-desc">
+                    Minuman segar dan nikmat yang siap menemani setiap momen.
+                    </p>
+                    <div class="flex justify-between">
+                    <h2 class="price" x-text="menu.price"></h2>
+                    <p class="sold">2RB Terjual</p>
+                    </div>
+                </div>
+                </template>
+            </div>
+            </template>
+        </div>
+        </section>
+
+
+
+        <!-- section footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="logo-footer">
+                    <img src="image/logo-footer.svg" alt="">
+                    <p class="footer-desc">setiap sudut diciptakan untuk membuatmu betah — baik saat bekerja, berdiskusi, maupun sekadar menikmati waktu bersama teman.</p>
+                </div>
+
+                <div class="content">
+                    <h1 class="content-title">Navigasi</h1>
+                    <p class="sub-content">Beranda</p>
+                    <p class="sub-content">Tentang Kami</p>
+                    <p class="sub-content">Menu Kami</p>
+                    <p class="sub-content">Meeting Room</p>                
+                </div>
+                <div class="content">
+                    <h1 class="content-title">Menu Kami</h1>
+                    <p class="sub-content">Camilam</p>
+                    <p class="sub-content">Makanan</p>
+                    <p class="sub-content">Minuman</p>                
+                </div>
+                <div class="content">
+                    <h1 class="content-title">Kontak</h1>
+                    <div class="contact">
+                        <iconify-icon icon="mdi:instagram" class="icon-footer"></iconify-icon>
+                        <p class="detail-contact">083-496-284-593</p>                    
+                    </div>
+                    <div class="contact">
+                        <iconify-icon icon="lets-icons:message-fill" class="icon-footer"></iconify-icon>
+                        <p class="detail-contact">kopicangkir@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-account">
+                <div class="account">
+                    <iconify-icon icon="mdi:instagram" class="icon-footer"></iconify-icon>
+                    <iconify-icon icon="ic:baseline-whatsapp" class="icon-footer"></iconify-icon>
+                    <iconify-icon icon="mingcute:facebook-line" class="icon-footer"></iconify-icon>
+                    <iconify-icon icon="prime:twitter" class="icon-footer"></iconify-icon>
+                </div>
+
+                <p class="footer-container-2">&copy; 2022kopicangkir</p>
+            </div>
+        </footer>
+
+
+        <!-- script js for navbar -->
+        <script src="navbar.js"></script>
+
+        <!-- script js swiper -->
+        <script src="swiper.js"></script>
+
+        <!-- script js for swiper -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    </body>
+</html>

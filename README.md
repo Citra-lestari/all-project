@@ -1,25 +1,10 @@
-# Get started with Tailwind CSS
-This repo helps you get up and running with tailwind using vanilla html as quickly as possible. 
-Uses vite
+Tahap - 1 Landing Page
 
-## Get started
-1. Clone the repo
-```
-git clone https://github.com/inerds/tailwind-quickstart.git
-cd tailwind-quickstart
-```
+Tahapp ini pengguna akan di berikan beberapa section yang akan membanntu pengguna untuk pergi ke halaman menu atau meeting room
 
-2. Install dependencies
-```
-yarn
-```
+Tahap - 2 Page menu
+Setelah pengguna menekan button yang bisa meengarahkan ke page menu, di page ini akan menampikan menu menu yang di jual oleh cafe dan memiiki fillter untuk kategri makanannya
 
-3. Start development
-```
-# Start a server with vite
-yarn dev
-```
-```
-# Build with vite
-yarn build
-```
+Tahap - 3 Page meeting room
+sama dengan tahap 2 sebelumnya. saat klik button yg mengarahkan ke meeting room pengguna akan di tampilkan deetail mengenai meeting room yang di tawarkan. jika ingin booking pengguna bisa
+ke section cta / cari button yg berisi "booking" di page tersebut lalu akan di arahkan ke halaman whatsapp admin untuk booking lebih lanjut

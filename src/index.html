@@ -2,20 +2,437 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-
         <title>Tailwind quick start</title>
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+
+        <!-- link swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
         <link rel="stylesheet" href="./css/tailwind.css" />
     </head>
     <body>
-        <div
-            class="min-h-screen flex lg:bg-red-400 flex-col items-center bg-gray-700 justify-center"
-        >
-            <h1 class="text-5xl text-white font-sans mb-2">Hello World!</h1>
-            <p class="text-white">Tailwind quick start</p>
-        </div>
+        <header class="sticky top-0 z-20 h-20 bg-whiteText">
+            <div class=" relative flex justify-between items-center h-full mx-auto max-w-[90%] md:max-w-[85%] 2xl:max-w-[1440px]">
+                <nav class="w-full relative md:z-0 z-10 h-full flex justify-between items-center bg-whiteText" id="navbar">
+                    <div>
+                        <a href="index.html"><img src="image/logo.svg" alt="logo" class="lg:w-[90px] w-[50px]"></a>
+                    </div>
+
+                    <div class="hidden md:flex items-center">
+                        <ul class="flex justify-between lg:gap-[25px] md:gap-6 items-center">
+                            <li><a href="index.html" class="nav-all">Beranda</a></li>
+                            <li><a href="pageMenu.html" class="nav-all">Menu</a></li>
+                            <li><a href="#rating" class="nav-all">Rating</a></li>
+                            <li><a href="pageMeeting.html" class="nav-all">Meeting Room</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="md:hidden" id="menu-toggle">
+                        <iconify-icon icon="mynaui:menu" class="text-[32px] text-blackAll hover:text-blackAll hover:transition-all hover:duration-500"></iconify-icon>
+                    </button>
+
+                    <div class="h-full bg-secondary w-[390px] absolute top-0 right-0 -z-10 hidden md:block lg:block 2xl:block"></div>
+                </nav>
+                
+                <nav class="hidden md:hidden w-full py-8 fixed bg-whiteText z-30 top-20 left-0" id="mobile-menu">
+                    <div class="flex flex-col gap-4 items-center">
+                        <ul class="text-center flex flex-col gap-4">
+                            <li><a href="#home" class="nav-all">Beranda</a></li>
+                            <li><a href="pageMenu.html" class="nav-all">Menu</a></li>
+                            <li><a href="#rating" class="nav-all">Rating</a></li>
+                            <li><a href="pageMeeting.html" class="nav-all">Meeting Room</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- hero section -->
+        <section  id="home">
+            <div class="hero-bg ">
+                <div class="container-text-img-hero">
+                    <div class="container-text-hero">
+                        <h1 class="hero-title">Ruang Meeting Modern di Tengah Kehangatan Café</h1>
+                        <p class="hero-desc">Suasana tenang dengan aroma kopi yang menenangkan berpadu sempurna di sini. Ruang ideal untuk rapat, diskusi, dan kolaborasi produktif bersama timmu.</p>
+                        <div class="flex gap-[10px] mb-[20px] text-center justify-center ">
+                            <a href="pageMeeting.html" class="Button-action">Meeting Room</a>
+                            <a href="pageMenu.html" class="Button-action">Menu</a>
+                        </div>
+                    </div>
+                    <img src="image/hero.svg" alt="" class="object-cover h-full hidden md:hidden xl:block top-0">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- section service -->
+        <section x-data="{ tab: 'meeting' }">
+            <!-- Judul & Deskripsi -->
+                <div class="title-all-section">
+                    <h1 class="section-title">Kenyamanan yang Hadir untuk Anda</h1>
+                    <p class="section-desc">Kami menciptakan ruang yang sempurna untuk bekerja, berbincang, atau sekadar bersantai. </p>
+                </div>
+
+            <!-- Konten utama (teks kiri & gambar kanan) -->
+            <div class="flex flex-col md:flex-row gap-8 items-center justify-between">
+                <!-- Kiri: Teks fitur -->
+                <div class="w-full md:w-1/2 space-y-6">
+                    <!-- Meeting Room -->
+                    <div 
+                        class="cursor-pointer border-l-4 pl-4 transition-colors"
+                        :class="tab === 'meeting' ? 'border-primary text-blackAll' : 'border-transparent text-gray-500 hover:text-blackAll'"
+                        @click="tab = 'meeting'">
+                        <h3 class="text-xl font-semibold">Meeting Room</h3>
+                        <p class="text-sm mt-1">
+                        Meeting room kami dilengkapi dengan fasilitas modern yang mendukung produktivitas dan kenyamanan kerja.
+                        </p>
+                    </div>
+                
+                    <!-- Outdoor Indoor -->
+                    <div 
+                        class="cursor-pointer border-l-4 pl-4 transition-colors"
+                        :class="tab === 'outdoor' ? 'border-primary text-blackAll' : 'border-transparent text-gray-500 hover:text-blackAll'"
+                        @click="tab = 'outdoor'">
+                        <h3 class="text-xl font-semibold">Outdoor Indoor</h3>
+                        <p class="text-sm mt-1">
+                        Rasakan keseimbangan antara kehangatan ruang dalam dan kesegaran ruang luar.
+                        </p>
+                    </div>
+                
+                    <!-- Wi-Fi Gratis -->
+                    <div 
+                        class="cursor-pointer border-l-4 pl-4 transition-colors"
+                        :class="tab === 'wifi' ? 'border-primary text-blackAll' : 'border-transparent text-gray-500 hover:text-blackAll'"
+                        @click="tab = 'wifi'">
+                        <h3 class="text-xl font-semibold">Wi-Fi Gratis</h3>
+                        <p class="text-sm mt-1">
+                        Nikmati akses Wi-Fi gratis dengan koneksi cepat untuk mendukung aktivitasmu sepanjang hari.
+                        </p>
+                    </div>
+                </div>
+            
+                <!-- Kanan: Gambar yang berganti -->
+                <div class="w-full md:w-1/3 relative">
+                <!-- Transisi lembut antar gambar -->
+                    <template x-if="tab === 'meeting'">
+                        <img 
+                            src="image/MEETING ROOM.svg" 
+                            alt="Meeting Room" 
+                            class="rounded-2xl shadow-lg w-full h-auto object-cover transition-all duration-500"
+                        >
+                    </template>
+                
+                    <template x-if="tab === 'outdoor'">
+                        <img 
+                            src="image/ourdoor.svg" 
+                            alt="Outdoor Indoor" 
+                            class="rounded-2xl shadow-lg w-full h-auto object-cover transition-all duration-500"
+                        >
+                    </template>
+
+                    <template x-if="tab === 'wifi'">
+                        <img 
+                            src="image/wifi gratis.svg" 
+                            alt="Wi-Fi Gratis" 
+                            class="rounded-2xl shadow-lg w-full h-auto object-cover transition-all duration-500"
+                        >
+                    </template>
+                </div>
+            </div>
+        </section>
+
+        <!-- section about us -->
+        <section class="flex justify-center items-center">
+            <img src="image/about.svg" alt="about us" class="hidden md:block md:w-[300px] xl:w-[486px] 2xl:w-[1100px]">
+            <div class="w-full ml-0 md:ml-[50px] 2xl:ml-[100px]">
+                <h1 class="aboutUs-title">Tentang Kami dan Suasana yang Kami Ciptakan</h1>
+                <p class="aboutUs-desc">Kami percaya bahwa kenyamanan adalah kunci dari setiap momen berharga. Karena itu, kami menciptakan ruang yang hangat, tenang, dan penuh inspirasi untuk anda.</p>
+                <div class="flex gap-[10px] mb-[20px] 2xl:mb-[50px]">
+                    <a href="pageMeeting.html" class="Button-action">Meeting Room</a>
+                    <a href="pageMenu.html" class="Button-action">Menu</a>
+                </div>
+                <div class="flex md:gap-[30px] gap-[30px] xl:gap-[60px]">
+                    <div>
+                        <h2 class="aboutUs-title-badges">25+</h2>
+                        <p class="aboutUs-detail-badges">Menu Premium</p>
+                    </div>
+
+                    <div>
+                        <h2 class="aboutUs-title-badges">900+</h2>
+                        <p class="aboutUs-detail-badges">Pelanggan Puas</p>
+                    </div>
+
+                    <div>
+                        <h2 class="aboutUs-title-badges">4.9</h2>
+                        <p class="aboutUs-detail-badges">Rating Pelanggan</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- section menu - detai menu -->
+        <section class="relative md:h-[350px] xl:h-[550px] 2xl:h-[900px] mt-[120px]">
+            <img src="image/menu.svg" alt="" class="image-menu">
+            <div class="container-menu">
+                <img src="image/coffe up.svg" alt="" class="coffee-up">
+                <div class="content-menu">
+                    <h1 class="menu-title">Temukan Menu Spesial untuk Setiap Pertemuan</h1>
+                    <p class="menu-desc-home">Nikmati beragam pilihan makanan dan minuman yang dirancang untuk melengkapi setiap momen penting Anda, mulai dari rapat santai hingga pertemuan bisnis yang berkesan.</p>
+                    <a href="pageMenu.html" class="Button-action">Menu</a>
+                </div>
+                <img src="image/coffe down.svg" alt="" class="coffee-bottom">
+            </div>
+        </section>
+
+        <!-- section meeting room -->
+        <section class=" relative md:h-[350px] xl:h-[550px] 2xl:h-[900px] mt-[120px]">
+            <img src="image/meeeting room.svg" alt="" class="image-meeting">
+            <div class="container-meeting">
+                <img src="image/coffe up.svg" alt="" class="coffee-up">
+                <div class="content-meeting">
+                    <h1 class="meeting-title">Temukan Menu Spesial untuk Setiap Pertemuan</h1>
+                    <p class="meeting-desc">Nikmati beragam pilihan makanan dan minuman yang dirancang untuk melengkapi setiap momen penting Anda, mulai dari rapat santai hingga pertemuan bisnis yang berkesan.</p>
+                    <a href="pageMeeting.html" class="Button-action">Meeting Room</a>
+                </div>
+                <img src="image/coffe down.svg" alt="" class="coffee-bottom">
+            </div>
+        </section>
+
+        <!-- section cta -->
+        <section class="w-full flex flex-col-reverse lg:flex-row items-center justify-between border border-[#7B5B3E] rounded-md p-6 lg:p-10 gap-6">
+            <!-- Kiri: Teks -->
+            <div class="flex-1 text-center lg:text-left">
+                <h2 class="text-2xl md:text-3xl font-semibold text-[#4B2E1A] leading-snug">
+                Temukan Ruang Meeting Nyaman di<br class="hidden sm:block" />
+                Tengah Kehangatan Café!
+                </h2>
+                <p class="text-[#4B2E1A]/80 mt-3 text-sm md:text-base max-w-lg mx-auto lg:mx-0">
+                Ruang meeting kami menghadirkan suasana tenang dengan aroma kopi yang menenangkan.
+                Tempat sempurna untuk berdiskusi dan berkolaborasi.
+                </p>
+                <button class="mt-5 bg-[#7B5B3E] text-white px-5 py-2 rounded-md text-sm md:text-base hover:bg-[#624531] transition">
+                Booking
+                </button>
+            </div>
+
+            <!-- Kanan: Gambar -->
+            <div class="flex-1 lg:flex justify-center hidden">
+                <img src="image/cta.svg" alt="Meeting Room" 
+                    class="w-full max-w-[380px] lg:max-w-[450px] rounded-lg object-cover">
+            </div>
+        </section>
+
+        <!-- section rating -->
+        <section id="rating">
+            <!-- judul-desc section -->
+            <div class="title-all-section">
+                <h1 class="section-title">Suara Hangat dari Para Penikmat Kopi</h1>
+                <p class="section-desc">Setiap cangkir kopi punya cerita, inilah kisah mereka tentang suasana dan rasa yang selalu ingin diulang.</p>
+            </div>
+
+            <div class="swiper card-review-customer">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="rating-content">
+                            <h3 class="title-content-rating">Nyaman banget!</h3>
+                            <p class="desc-content-rating">Tempatnya sangat cocok buat kerja atau belajar, karena suasananya nyaman dan makanannya juga enak!</p>
+                            <div class="content-cust">
+                                <img src="image/cust1.svg" alt="">
+                                <div class="detail-cust">
+                                    <h4 class="name-cust">Anna Vetrovs</h4>
+                                    <p class="date-cust">10-04-2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rating-content">
+                            <h3 class="title-content-rating">Cocok untuk meeting</h3>
+                            <p class="desc-content-rating">Cafe ini punya ruangan khusus yg kedap suara, jadi sangat cocok untuk meeting dan kapasitasnya muat banyak</p>
+                            <div class="content-cust">
+                                <img src="image/cust2.svg" alt="">
+                                <div class="detail-cust">
+                                    <h4 class="name-cust">Yuka Mess</h4>
+                                    <p class="date-cust">09-04-2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rating-content">
+                            <h3 class="title-content-rating">Ramah dikantong!</h3>
+                            <p class="desc-content-rating">Harga makanan disini sangat ramah di kantong! banyak sekali menu menu yang lezat yang cocok untuk anak anak sekolahan</p>
+                            <div class="content-cust">
+                                <img src="image/cust1.svg" alt="">
+                                <div class="detail-cust">
+                                    <h4 class="name-cust">Anna Vetrovs</h4>
+                                    <p class="date-cust">10-04-2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rating-content">
+                            <h3 class="title-content-rating">Banyak fasilitas</h3>
+                            <p class="desc-content-rating">Disini sangat banyak fasilitas tersedia, mulai dari wifi, ruangan indoor outdoor, private meeting dan yang lainnya!</p>
+                            <div class="content-cust">
+                                <img src="image/cust3.svg" alt="">
+                                <div class="detail-cust">
+                                    <h4 class="name-cust">Hana anako</h4>
+                                    <p class="date-cust">07-04-2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rating-content">
+                            <h3 class="title-content-rating">Ramah!</h3>
+                            <p class="desc-content-rating">Karyawan disini sangat ramah kepada semua customer! Tidak ada yang membeda bedakan customer</p>
+                            <div class="content-cust">
+                                <img src="image/cust4.svg" alt="">
+                                <div class="detail-cust">
+                                    <h4 class="name-cust">Rose Petter</h4>
+                                    <p class="date-cust">01-04-2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rating-content">
+                            <h3 class="title-content-rating">Bermanfaat</h3>
+                            <p class="desc-content-rating">Cafe ini sangat membantu karena memiliki meeting room apalagi dengan banyak fasilitas sekaligus dengan dinding kedap suara</p>
+                            <div class="content-cust">
+                                <img src="image/cust1.svg" alt="">
+                                <div class="detail-cust">
+                                    <h4 class="name-cust">Anna Vetrovs</h4>
+                                    <p class="date-cust">10-04-2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rating-content">
+                            <h3 class="title-content-rating">Bermanfaat</h3>
+                            <p class="desc-content-rating">Cafe ini sangat membantu karena memiliki meeting room apalagi dengan banyak fasilitas sekaligus dengan dinding kedap suara</p>
+                            <div class="content-cust">
+                                <img src="image/cust1.svg" alt="">
+                                <div class="detail-cust">
+                                    <h4 class="name-cust">Anna Vetrovs</h4>
+                                    <p class="date-cust">10-04-2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="rating-content">
+                            <h3 class="title-content-rating">Bermanfaat</h3>
+                            <p class="desc-content-rating">Cafe ini sangat membantu karena memiliki meeting room apalagi dengan banyak fasilitas sekaligus dengan dinding kedap suara</p>
+                            <div class="content-cust">
+                                <img src="image/cust1.svg" alt="">
+                                <div class="detail-cust">
+                                    <h4 class="name-cust">Anna Vetrovs</h4>
+                                    <p class="date-cust">10-04-2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-parent">
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- section gallery -->
+        <section>
+            <!-- judul-desc section -->
+            <div class="title-all-section">
+                <h1 class="section-title">Tempat di Mana Ide dan Kopi Bertemu</h1>
+                <p class="section-desc">Ruang tenang untuk bekerja, berdiskusi, dan berinovasi. Semua ditemani aroma kopi yang menyegarkan pikiran.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-[5px] md:grid-cols-12 md:gap-[10px] lg:gap-[16px]">
+                <a href="" class="gallery-cols3-row1"><img src="image/4.1.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/4.2.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/4.3.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols4-row1"><img src="image/3.1.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols4-row1"><img src="image/3.2.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols4-row1"><img src="image/3.3.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols4-row1"><img src="image/3.4.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/4.4.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/4.5.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/4.6.svg" alt="" class="img-gallery"></a>
+            </div>
+        </section>
+
+        <!-- section footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="logo-footer">
+                    <img src="image/logo-footer.svg" alt="">
+                    <p class="footer-desc">setiap sudut diciptakan untuk membuatmu betah — baik saat bekerja, berdiskusi, maupun sekadar menikmati waktu bersama teman.</p>
+                </div>
+
+                <div class="content">
+                    <h1 class="content-title">Navigasi</h1>
+                    <p class="sub-content">Beranda</p>
+                    <p class="sub-content">Tentang Kami</p>
+                    <p class="sub-content">Menu Kami</p>
+                    <p class="sub-content">Meeting Room</p>                
+                </div>
+                <div class="content">
+                    <h1 class="content-title">Menu Kami</h1>
+                    <p class="sub-content">Camilam</p>
+                    <p class="sub-content">Makanan</p>
+                    <p class="sub-content">Minuman</p>                
+                </div>
+                <div class="content">
+                    <h1 class="content-title">Kontak</h1>
+                    <div class="contact">
+                        <iconify-icon icon="mdi:instagram" class="icon-footer"></iconify-icon>
+                        <p class="detail-contact">083-496-284-593</p>                    
+                    </div>
+                    <div class="contact">
+                        <iconify-icon icon="lets-icons:message-fill" class="icon-footer"></iconify-icon>
+                        <p class="detail-contact">kopicangkir@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-account">
+                <div class="account">
+                    <iconify-icon icon="mdi:instagram" class="icon-footer"></iconify-icon>
+                    <iconify-icon icon="ic:baseline-whatsapp" class="icon-footer"></iconify-icon>
+                    <iconify-icon icon="mingcute:facebook-line" class="icon-footer"></iconify-icon>
+                    <iconify-icon icon="prime:twitter" class="icon-footer"></iconify-icon>
+                </div>
+
+                <p class="footer-container-2">&copy; 2022kopicangkir</p>
+            </div>
+        </footer>
+
+
+        <!-- script js for navbar -->
+        <script src="navbar.js"></script>
+
+        <!-- script js swiper -->
+        <script src="swiper.js"></script>
+
+        <!-- script js for swiper -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     </body>
 </html>

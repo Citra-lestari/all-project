@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Tailwind quick start</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- link swiper -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+        <link rel="stylesheet" href="./css/tailwind.css" />
+    </head>
+    <body>
+        <header class="sticky top-0 z-20 h-20 bg-whiteText">
+            <div class=" relative flex justify-between items-center h-full mx-auto max-w-[90%] md:max-w-[85%] 2xl:max-w-[1440px]">
+                <nav class="w-full relative md:z-0 z-10 h-full flex justify-between items-center bg-whiteText" id="navbar">
+                    <div>
+                        <a href="index.html"><img src="image/logo.svg" alt="logo" class="lg:w-[90px] w-[50px]"></a>
+                    </div>
+
+                    <div class="hidden md:flex items-center">
+                        <ul class="flex justify-between lg:gap-[25px] md:gap-6 items-center">
+                            <li><a href="index.html" class="nav-all">Beranda</a></li>
+                            <li><a href="pageMenu.html" class="nav-all">Menu</a></li>
+                            <li><a href="#rating" class="nav-all">Rating</a></li>
+                            <li><a href="#" class="nav-all">Meeting Room</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="md:hidden" id="menu-toggle">
+                        <iconify-icon icon="mynaui:menu" class="text-[32px] text-blackAll hover:text-blackAll hover:transition-all hover:duration-500"></iconify-icon>
+                    </button>
+
+                    <div class="h-full bg-secondary w-[390px] absolute top-0 right-0 -z-10 hidden md:block lg:block 2xl:block"></div>
+                </nav>
+                
+                <nav class="hidden md:hidden w-full py-8 fixed bg-whiteText margin z-30 top-20 left-0" id="mobile-menu">
+                    <div class="flex flex-col gap-4 items-center">
+                        <ul class="text-center flex flex-col gap-4">
+                            <li><a href="index.html" class="nav-all">Beranda</a></li>
+                            <li><a href="pageMenu.html" class="nav-all">Menu</a></li>
+                            <li><a href="#rating" class="nav-all">Rating</a></li>
+                            <li><a href="#" class="nav-all">Meeting Room</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- hero section -->
+       <section class="relative w-full h-[200px] md:h-[300px] xl:h-[450px] overflow-hidden">
+  <!-- Background Image -->
+  <img src="image/bg meeting room.svg" alt="Meeting Room" 
+       class="absolute inset-0 w-full h-full object-cover">
+
+  <!-- Overlay gelap untuk kontras teks -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Konten di tengah -->
+  <div class="relative flex flex-col items-center justify-center h-full text-center text-white">
+    <h1 class="text-[24px] sm:text-[30px] md:text-[36px] xl:text-[44px] font-semibold">
+      Meeting Room
+    </h1>
+  </div>
+</section>
+
+
+        <!-- detail fasilitas -->
+        <section class="bg-fasilitas">
+            <h1 class="title-fasilitas">Detail Fasilitas : </h1>
+            <div class="md:flex">
+                <ul>
+                    <li class="desc-fasilitas">Kapasitas muat hingga 10–12 orang</li>
+                    <li class="desc-fasilitas">Luas ruangan 6x4 meter</li>
+                    <li class="desc-fasilitas">Projector & layar</li>
+                    <li class="desc-fasilitas">Whiteboard + spidol</li>
+                    <li class="desc-fasilitas">Stopkontak di tiap sisi meja</li>
+                    <li class="desc-fasilitas">Wi-Fi cepat & stabil khusus di meeting room</li>
+                </ul>
+
+                <ul class=" md:ml-[60px] xl:ml-[100px]">
+                    <li class="desc-fasilitas">Air mineral & kopi gratis</li>
+                    <li class="desc-fasilitas">Di fasilitasi AC</li>
+                    <li class="desc-fasilitas">Sound system ringan</li>
+                    <li class="desc-fasilitas">Akses privat</li>
+                    <li class="desc-fasilitas">Ruangan Kedap Suara</li>
+                    <li class="desc-fasilitas">Gordyn tebal (untuk privasi visual)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- section rating -->
+        <section class="bg-fasilitas">
+            <h1 class="title-fasilitas">Rating Meeting Room: </h1>
+
+            <div class="ml-[15px]"> <!--pembungkus all rating-->
+                <div class="flex gap-[10px] items-start mb-[20px]">  <!--pembungkus per rating-->
+                    <img src="image/cust 1.svg" alt="">
+                    <div>
+                        <h3 class="name-cust">Yuka Assayu</h3>
+                        <div class="flex mb-[8px]">
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                        </div>
+
+                        <p class="desc-rating">Meeting room disini sangat bagus! semua privasi kami dijaga dengan baik, semuanya sesuai dengan yang tertera di deskripsi! mulai dari wifi yang kencang hingga ruangan kedap suara, saya sangat menjamin untuk booking meeting room ini!</p>
+                        <div class="flex gap-[10px]">
+                            <img src="image/rating1.svg" alt="">
+                            <img src="image/rating2.svg" alt="">
+                            <img src="image/rating3.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-[10px] items-start mb-[20px]">  <!--pembungkus per rating-->
+                    <img src="image/cust 1.svg" alt="">
+                    <div>
+                        <h3 class="name-cust">Yuka Assayu</h3>
+                        <div class="flex mb-[8px]">
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                        </div>
+
+                        <p class="desc-rating">Meeting room di café ini benar-benar membuat suasana rapat jadi lebih santai tapi tetap fokus. Suara dari luar tidak terdengar, pencahayaannya pas, dan aroma kopi di sekitar membuat suasana tetap segar.</p>
+                        <div class="flex gap-[10px]">
+                            <img src="image/rating4.svg" alt="">
+                            <img src="image/rating5.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-[10px] items-start mb-[20px]">  <!--pembungkus per rating-->
+                    <img src="image/cust 1.svg" alt="">
+                    <div>
+                        <h3 class="name-cust">Yuka Assayu</h3>
+                        <div class="flex mb-[8px]">
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                            <iconify-icon icon="material-symbols:star-rounded" class="star-icon"></iconify-icon>
+                        </div>
+
+                        <p class="desc-rating">Tempatnya luar biasa nyaman dan rapi. Setiap meja sudah disiapkan stopkontak, koneksi Wi-Fi cepat, dan projector berfungsi dengan baik. Kami merasa seperti bekerja di ruang kantor profesional, tapi dengan sentuhan hangat khas café.</p>
+                        <div class="flex gap-[10px]">
+                            <img src="image/rating6.svg" alt="">
+                            <img src="image/rating7.svg" alt="">
+                            <img src="image/rating8.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- section cta -->
+        <section class="w-full flex flex-col-reverse lg:flex-row items-center justify-between border border-primary rounded-md p-6 lg:p-10 gap-6">
+            <!-- Kiri: Teks -->
+            <div class="flex-1 text-center lg:text-left">
+                <h2 class="text-2xl md:text-3xl font-semibold text-primary leading-snug">
+                Temukan Ruang Meeting Nyaman di<br class="hidden sm:block" />
+                Tengah Kehangatan Café!
+                </h2>
+                <p class="text-[#4B2E1A]/80 mt-3 text-sm md:text-base max-w-lg mx-auto lg:mx-0">
+                Ruang meeting kami menghadirkan suasana tenang dengan aroma kopi yang menenangkan.
+                Tempat sempurna untuk berdiskusi dan berkolaborasi.
+                </p>
+                <a href="https://wa.me/6287887306740"><button class="Button-action mt-6">Booking</button></a>
+            </div>
+
+            <!-- Kanan: Gambar -->
+            <div class="flex-1 lg:flex justify-center hidden">
+                <img src="image/cta.svg" alt="Meeting Room" 
+                    class="w-full max-w-[380px] lg:max-w-[450px] rounded-lg object-cover">
+            </div>
+        </section>
+
+
+
+        <!-- section gallery -->
+        <section>
+            <!-- judul-desc section -->
+            <div class="title-all-section">
+                <h1 class="section-title">Momen Produktif di Ruang yang Nyaman</h1>
+                <p class="section-desc">Temukan keseimbangan antara kenyamanan dan produktivitas di ruang pertemuan kami.</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-[5px] md:grid-cols-12 md:gap-[10px] lg:gap-[16px]">
+                <a href="" class="gallery-cols3-row1"><img src="image/room 4.1.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/room 4.2.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/room 4.3.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols4-row1"><img src="image/room 3.1.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols4-row1"><img src="image/room 3.2.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols4-row1"><img src="image/room 3.3.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols4-row1"><img src="image/room 3.4.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/room 4.4.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/room 4.5.svg" alt="" class="img-gallery"></a>
+                <a href="" class="gallery-cols3-row1"><img src="image/room 4.6.svg" alt="" class="img-gallery"></a>
+            </div>
+        </section>
+
+        <!-- section footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="logo-footer">
+                    <img src="image/logo-footer.svg" alt="">
+                    <p class="footer-desc">setiap sudut diciptakan untuk membuatmu betah — baik saat bekerja, berdiskusi, maupun sekadar menikmati waktu bersama teman.</p>
+                </div>
+
+                <div class="content">
+                    <h1 class="content-title">Navigasi</h1>
+                    <p class="sub-content">Beranda</p>
+                    <p class="sub-content">Tentang Kami</p>
+                    <p class="sub-content">Menu Kami</p>
+                    <p class="sub-content">Meeting Room</p>                
+                </div>
+                <div class="content">
+                    <h1 class="content-title">Menu Kami</h1>
+                    <p class="sub-content">Camilam</p>
+                    <p class="sub-content">Makanan</p>
+                    <p class="sub-content">Minuman</p>                
+                </div>
+                <div class="content">
+                    <h1 class="content-title">Kontak</h1>
+                    <div class="contact">
+                        <iconify-icon icon="mdi:instagram" class="icon-footer"></iconify-icon>
+                        <p class="detail-contact">083-496-284-593</p>                    
+                    </div>
+                    <div class="contact">
+                        <iconify-icon icon="lets-icons:message-fill" class="icon-footer"></iconify-icon>
+                        <p class="detail-contact">kopicangkir@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-account">
+                <div class="account">
+                    <iconify-icon icon="mdi:instagram" class="icon-footer"></iconify-icon>
+                    <iconify-icon icon="ic:baseline-whatsapp" class="icon-footer"></iconify-icon>
+                    <iconify-icon icon="mingcute:facebook-line" class="icon-footer"></iconify-icon>
+                    <iconify-icon icon="prime:twitter" class="icon-footer"></iconify-icon>
+                </div>
+
+                <p class="footer-container-2">&copy; 2022kopicangkir</p>
+            </div>
+        </footer>
+
+
+        <!-- script js for navbar -->
+        <script src="navbar.js"></script>
+
+        <!-- script js swiper -->
+        <script src="swiper.js"></script>
+
+        <!-- script js for swiper -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    </body>
+</html>
