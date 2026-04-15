@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+/* plugin form untuk memudahkan styling form */
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+
+@theme {
+    /* font */
+    --font-poppins: 'poppins', system-ui, sans-serif;
+
+    /* shadow */
+    --shadow-nav: 0px -7px 11.5px 0px rgba(149, 149, 149, 0.1);
+
+    /* color */
+    --color-white_f5: rgba(245, 245, 245, 1);
+    --color-green_status: rgba(0, 168, 79, 1);
+    --color-orange: rgba(255, 174, 76, 1);
+    --color-yellow: rgba(239, 197, 91, 1);
+    --color-purple: rgba(99, 89, 233, 1);
+    --color-blue_status: rgba(0, 173, 181, 1);
+    --color-green_2: rgba(111, 209, 149, 1);
+    --color-primary: rgba(59, 168, 209, 1);
+    --color-black-cust: rgba(34, 34, 34, 1);
+    --color-white-cust: rgba(252, 252, 252, 1);
+    --color-stroke_line_dashboard: rgba(233, 234, 235, 0.8);
+    --color-grey: rgba(161, 161, 161, 1);
+    --color-secondary: rgba(30, 58, 138, 1);
+    --color-red: rgba(189, 12, 12, 1);
+}
+
+::-webkit-scrollbar {
+    @apply w-0 h-0;
+}
+
+.screen {
+    @apply relative mx-auto h-screen w-full max-w-sm bg-white-cust font-poppins flex flex-col;
+}
+
+.margin-setting {
+    @apply mx-6;
+}
+
+
+/* KOMPONEN NAV BOTTOM */
+.container-nav-bottom {
+    @apply bg-white-cust shadow-nav text-grey py-5 rounded-t-[5px] sticky w-full max-w-sm bottom-0 z-20;
+}
+
+.nav-bottom {
+    @apply mx-6 flex flex-row items-center justify-between;
+}
+
+.nav-bottom li a {
+    @apply duration-300 transition-all hover:text-primary;
+}
+
+.nav-bottom-active {
+    @apply text-primary;
+}
+
+
+/* STYLE AUTH */
+.auth-setting {
+    @apply font-poppins bg-white-cust h-full text-xs flex flex-col items-center justify-center mx-6;
+}
+
+.auth-setting img {
+    @apply w-28 h-27.5 object-cover;
+}
+
+.auth-setting h1 {
+    @apply text-sm mt-1 text-center;
+}
+
+.auth-setting form {
+    @apply w-full flex flex-col gap-4;
+}
+
+.container-input-auth {
+    @apply flex flex-col gap-1.25;
+}
+
+.container-input-auth label {
+    @apply font-medium text-sm;
+}
+
+.container-input-auth input {
+    @apply text-xs focus:outline-none bg-white_f5 py-3.5 px-2.5 rounded-md border border-black-cust/10;
+}
+
+.container-forgot {
+    @apply flex flex-row items-center justify-between;
+}
+
+.container-forgot a {
+    @apply hover:text-primary transition-all text-black-cust/40;
+}
+
+.remember {
+    @apply flex flex-row items-center gap-1 text-primary;
+}
+
+.remember input {
+    @apply border border-primary/45 w-3 h-3 focus:appearance-auto focus:accent-primary focus:bg-none;
+}
+
+.btn-primary-auth {
+    @apply py-3 bg-primary rounded-[10px] font-medium text-sm md:text-[15px] text-white_f5;
+}
+
+.btn-primary{
+    @apply py-2 px-4 rounded-[5px] bg-primary font-medium text-white-cust;
+}
