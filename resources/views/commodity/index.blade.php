@@ -121,6 +121,8 @@
 
                             <tr data-id="{{$commo->id}}">
                                 <td class="tdata">{{$commo->name}}</td>
+                                <td class="tdata">{{$commo->category->name}}</td>
+                                <td class="tdata">{{$commo->description}}</td>
                                 <td class="tdata-action">
                                     {{-- button read --}}
                                     <a href="{{ route('commodity.show', $commo->id) }}" class=" btn-read">

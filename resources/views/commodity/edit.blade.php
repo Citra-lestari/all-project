@@ -155,7 +155,13 @@
                     {{-- IMAGE --}}
                     <span class="form-input-item">
                         <label>Image</label>
-                        <input type="file" name="image" accept=".png,.jpg,.jpeg">
+
+                        <input type="file" name="image" accept=".png, .jpg, .jpeg">
+                        @if ($commodity->image)
+                            <div style="margin-bottom:10px;">
+                                <img src="{{ asset('storage/' . $commodity->image) }}" alt="Product Image" style="max-width: 200px; height: auto;">
+                            </div>
+                        @endif
                     </span>
 
                 </div>

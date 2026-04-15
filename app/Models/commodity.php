@@ -3,10 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CategoryCommodity;
 
-class commodity extends Model
+class Commodity extends Model
 {
-    protected $guarded = [
-        'id'
-    ];
+    protected $guarded = ['id'];
+
+    public function category()
+    {
+        return $this->belongsTo(CategoryCommodity::class, 'category_commodity_id');
+    }
 }

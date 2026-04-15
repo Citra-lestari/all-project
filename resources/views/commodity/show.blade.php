@@ -96,10 +96,35 @@
             </span>
             <div class="container-content-admin">
                 <div class="container-crud">
+
+                    {{-- NAME --}}
                     <span class="form-input-item">
                         <label for="category-name">Name</label>
-                        <input type="text" value="{{$allCommodities->name}}" placeholder="Enter category name" readonly>
+                        <input type="text" value="{{$commodity->name}}" placeholder="Enter category name" readonly>
                     </span>
+
+                    {{-- CATEGORY --}}
+                    <span class="form-input-item">
+                        <label for="category-name">Category</label>
+                        <input type="text" value="{{$commodity->category->name}}" placeholder="Enter category name" readonly>
+                    </span>
+
+                    {{-- DESCRIPTION --}}
+                    <span class="form-input-item">
+                        <label for="category-name">Description</label>
+                        <input type="text" value="{{$commodity->description}}" placeholder="Enter category name" readonly>
+                    </span>
+
+                    {{-- IMAGE --}}
+                    <span class="form-input-item">
+                        <label for="category-name">Image</label>
+                        @if ($commodity->image)
+                            <div style="margin-bottom:10px;">
+                                <img src="{{ asset('storage/' . $commodity->image) }}" alt="Product Image" style="max-width: 200px; height: auto;">
+                            </div>
+                        @endif
+                    </span>
+
                 </div>
                 <span>
                     <a href="{{ route('commodity.index') }}" class="btn-secondary2">Back</a>

@@ -13,9 +13,13 @@ class CommodityController extends Controller
      */
     public function index()
     {
-        $allCommodities = commodity::all(); //mengambil semua data komoditas dari database menggunakan model commodity dan menyimpannya dalam variabel $allCommodities
-        return view('commodity.index', compact('allCommodities'));
+        $allCommodities = Commodity::all(); //mengambil semua data komoditas dari database menggunakan model Commodity dan menyimpannya dalam variabel $allCommodities
+        return view('commodity.index') ->with('allCommodities', $allCommodities);
+    }
 
+    public function category()
+    {
+        return $this->belongsTo(CategoryCommodity::class, 'category_commodity_id');
     }
 
     /**
@@ -46,7 +50,8 @@ class CommodityController extends Controller
 
         // HANDLE IMAGE
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('commodities', 'public');
+            $path = $request->file('image')->store('commodities', 'public');
+            $data['image'] = $path;
         }
 
         Commodity::create($data);
@@ -84,7 +89,13 @@ class CommodityController extends Controller
             'description'           => 'nullable|string',
         ]);
 
-        $commodity->update($request->all());
+        $data = $request->all();
+
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('commodities', 'public');
+        }
+
+        $commodity->update($data);
         return redirect()->route('commodity.index');
     }
 
@@ -95,11 +106,6 @@ class CommodityController extends Controller
     {
         $commodity->delete(); //menghapus data komoditas tertentu dari database
         return redirect()->route('commodity.index'); //setelah data dihapus, arahkan user kembali ke halaman index komoditas
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Commodity deleted successfully.'
-        ]);
 
         return redirect()->route('commodity.index');
         //setelah data dihapus, bawa user ke halaman index
