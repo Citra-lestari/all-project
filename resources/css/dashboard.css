@@ -47,7 +47,7 @@
 }
 
 .sidebar-setting {
-    @apply fixed top-0 h-screen z-50 overflow-y-auto w-[70%] md:w-[40%] lg:w-[25%] 2xl:w-[25%] bg-white-cust transition-transform duration-300 ease-in-out;
+    @apply fixed top-0 h-screen z-50 overflow-y-auto w-[70%] md:w-[40%] lg:w-[25%] 2xl:w-[25%]  lg:left-0 bg-white-cust transition-transform duration-300 ease-in-out;
 }
 
 .sidebar-closed {

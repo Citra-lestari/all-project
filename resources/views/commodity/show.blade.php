@@ -31,8 +31,8 @@
                             <iconify-icon icon="solar:alt-arrow-down-line-duotone" width="16"></iconify-icon>
                         </summary>
                         <span class="nav-child-item">
-                            <a href="{{route('category-commodity.index')}}" class="active-child-item text-child-item">Category Commodity</a>
-                            <a href="{{route('commodity.index')}}" class="text-child-item non-active-child-item">Commodity</a>
+                            <a href="{{route('category-commodity.index')}}" class="text-child-item non-active-child-item">Category Commodity</a>
+                            <a href="{{route('commodity.index')}}" class=" active-child-item text-child-item">Commodity</a>
                         </span>
                     </details>
                 </li>
@@ -119,8 +119,11 @@
                     <span class="form-input-item">
                         <label for="category-name">Image</label>
                         @if ($commodity->image)
+                        {{-- @if itu adalah sebuah templating dari laravel.
+                            kalau nanti di $commodity -> image ada datanya, maka jalankan code di bawah ini--}}
                             <div style="margin-bottom:10px;">
                                 <img src="{{ asset('storage/' . $commodity->image) }}" alt="Product Image" style="max-width: 200px; height: auto;">
+                                {{-- asset adalah helper laravel untuk menghasilkan URL ke file publik --}}
                             </div>
                         @endif
                     </span>
