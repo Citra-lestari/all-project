@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryCommodityController; //mengimpor controller category commodity biar bisa dipake disini
 use App\Http\Controllers\CommodityController; //mengimpor controller commodity biar bisa dipake disini
@@ -11,7 +13,18 @@ Route::resource('/category-commodity', CategoryCommodityController::class);
 
 Route::resource('/commodity', CommodityController::class);
 
+// LOGIN
+Route::get('/login', [LoginController::class, 'view']);
+// menggunakan method post untuk menyimpan data yang sudah diinputkan user
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/', function () {
-    return view('welcome');
+// REGISTER
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'register']);
+
+// LOGOUT
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/index', function () {
+    return view('index');
 });

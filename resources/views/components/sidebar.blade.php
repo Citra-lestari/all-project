@@ -46,13 +46,13 @@
                         </summary>
                     </details>
                 </li>
-                {{-- <form action="{{route('logout')}}" method="post" class="nav-item-logout text-gray-400">
+                <form action="{{ route('logout') }}" method="POST" class="group nav-item-logout">
                     @csrf
-                    <button type="submit" class="w-full flex flex-row items-center justify-start gap-x-3">
-                        <iconify-icon icon="material-symbols:logout-rounded" width="20"></iconify-icon>
-                        <p class="cursor-text">Logout</p>
+                    <button type="submit" class="items-center flex gap-2 cursor-pointer">
+                        <iconify-icon icon="material-symbols-light:logout-rounded" class="icon-logout-sidebar"></iconify-icon>
+                        <h2 class="text-logout-sidebar">Log Out</h2>
                     </button>
-                </form> --}}
+                </form>
             </ul>
         </div>
     </aside>
