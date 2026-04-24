@@ -12,13 +12,14 @@ class LoginController extends Controller
     // membuat function view untuk menampilkan halaman login
     public function view(){
         return view('auth.login');
+        //panggil file login.blade.php yang ada di folder resources/views/auth
     }
 
     // function login untuk autentikasi
     public function login(Request $request){
         // validasi input
         $request->validate([
-            'email' => 'required|email',
+            'email'    => 'required|email',
             'password' => 'required',
         ]);
 

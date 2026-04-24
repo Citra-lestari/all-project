@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
 
             $table->foreignId('category_commodity_id')->constrained('category_commodities')->onDelete('cascade');
+            //membuat colom baru dengan nama category_commodity_id yang akan menjadi foreign key yang terhubung dengan tabel category_commodities
+            //onDelete('cascade') artinya jika data di tabel category_commodities dihapus maka data yang terhubung di tabel commodities juga akan dihapus secara otomatis   
 
             $table->string('image')->nullable();
             $table->text('description')->nullable();

@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryCommodityController; //mengimpor controller category commodity biar bisa dipake disini
 use App\Http\Controllers\CommodityController; //mengimpor controller commodity biar bisa dipake disini
+use App\Http\Controllers\LoginController;
 
 Route::resource('/category-commodity', CategoryCommodityController::class);
 //route resource berfungsi untuk membuat 7 route otomatis untuk CRUD tanpa menulis 1 per 1
@@ -15,8 +15,9 @@ Route::resource('/commodity', CommodityController::class);
 
 // LOGIN
 Route::get('/login', [LoginController::class, 'view']);
-// menggunakan method post untuk menyimpan data yang sudah diinputkan user
+// menggunakan get karena hanya menampilkan halaman login, tidak ada data yang disimpan atau diubah
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+// menggunakan method post untuk menyimpan data yang sudah diinputkan user
 
 // REGISTER
 Route::get('/register', [RegisterController::class, 'index']);

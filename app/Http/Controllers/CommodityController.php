@@ -17,11 +17,6 @@ class CommodityController extends Controller
         return view('commodity.index') ->with('allCommodities', $allCommodities);
     }
 
-    public function category()
-    {
-        return $this->belongsTo(CategoryCommodity::class, 'category_commodity_id');
-    }
-
     /**
      * Show the form for creating a new resource.
      */
